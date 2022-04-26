@@ -6,8 +6,8 @@ export default function Credits() {
     <div className="Credits">
       <small className="credits">
         Project by{" "}
-        <a href="https://github.com/Yeobie/Ilaria-s-Project" target="blank">
-          Ilaria Vilardi
+        <a href="https://github.com/Yeobie/weather-react" target="blank">
+          Ilaria Vilardi. Created with React.
         </a>
       </small>
     </div>
