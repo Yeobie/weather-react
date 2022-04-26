@@ -1,5 +1,6 @@
 import React from "react";
 import "./Content.css";
+import ReactAnimatedWeather from "react-animated-weather";
 
 export default function Content() {
   return (
@@ -55,11 +56,12 @@ export default function Content() {
             <button id="fahrenheit-degrees">Fº</button>
           </div>{" "}
           <div className="col Icon">
-            <img
-              src="http://openweathermap.org/img/wn/04d@2x.png"
-              id="icon"
-              alt=""
-            />{" "}
+            <ReactAnimatedWeather
+              icon="CLOUDY"
+              color="grey"
+              size={150}
+              animate={true}
+            />
           </div>
         </div>
         <h4>
