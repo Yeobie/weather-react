@@ -1,0 +1,16 @@
+.Celsiusfahrenheit {
+  padding: 30px 0px;
+  font-size: 30px;
+}
+
+.Celsiusfahrenheit button {
+  background: none;
+  border: none;
+}
+.Active {
+  color: #4c8492;
+}
+
+.Active:hover {
+  cursor: default;
+}

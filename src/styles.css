@@ -1,0 +1,30 @@
+.Container {
+  max-width: 800px;
+  max-height: 620px;
+  display: block;
+  margin: 0 auto;
+  background-color: #f9e0c7;
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  box-shadow: 10px 10px 50px #f9e0c7;
+}
+
+.forecast-squares {
+  background-color: rgba(76, 132, 146, 0.5);
+  border-radius: 20px;
+  max-width: 150px;
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.forecast-temperatures {
+  font-size: 16px;
+}
+
+.forecast-temp-min {
+  color: #3a6874;
+}

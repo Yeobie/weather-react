@@ -1,0 +1,107 @@
+.Content h3 {
+  color: #3a6c77;
+  padding-left: 20px;
+}
+
+.Content .form-control {
+  border-radius: 10px;
+}
+
+.Content .btn-primary {
+  height: 40px;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #4c8492;
+}
+
+.Content .btn-primary:hover {
+  background-color: #215d6b;
+}
+
+h1 {
+  color: #013c4d;
+  margin: 0 auto;
+  background-color: #fbf7e6;
+  border-radius: 30px;
+  width: fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: block;
+  text-align: center;
+}
+
+h1::first-letter {
+  text-transform: capitalize;
+}
+
+#current-date {
+  display: block;
+  text-align: center;
+}
+
+.Conditions {
+  display: block;
+  text-align: center;
+}
+.Conditions::first-letter {
+  text-transform: capitalize;
+}
+
+.Description {
+  background-color: rgba(241, 156, 103, 0.3);
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.Description .weatherdata {
+  display: block;
+  text-align: center;
+  margin: 0px;
+}
+
+.Description .weatherdata::first-letter {
+  text-transform: capitalize;
+}
+
+h4 {
+  color: #3a6c77;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f09c67;
+  width: 150px;
+  border-radius: 30px;
+}
+
+.TemperatureValue {
+  font-size: 100px;
+  color: #4c8492;
+  padding-right: 0px;
+  max-width: 140px;
+  text-align: right;
+}
+
+.Celsiusfahrenheit {
+  padding: 30px 0px;
+  font-size: 30px;
+}
+
+.Celsiusfahrenheit button {
+  background: none;
+  border: none;
+}
+.Active {
+  color: #4c8492;
+}
+
+.Active:hover {
+  cursor: default;
+}
+
+.Icon #icon {
+  width: 150px;
+}
