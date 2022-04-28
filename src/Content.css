@@ -101,3 +101,9 @@ h4 {
 .Active:hover {
   cursor: default;
 }
+
+@media (max-width: 576px) {
+  .search {
+    padding-left: 30px;
+  }
+}

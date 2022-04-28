@@ -6,10 +6,10 @@ export default function Content() {
   return (
     <div>
       <div className="row Content">
-        <div className="col-4">
+        <div className="col-4 d-none d-md-block">
           <h3>Weather in...</h3>
         </div>
-        <div className="col-4 form">
+        <div className="col-md-4 form">
           <form id="search-form">
             <input
               type="search"
@@ -59,7 +59,7 @@ export default function Content() {
             <ReactAnimatedWeather
               icon="CLOUDY"
               color="grey"
-              size={150}
+              size={130}
               animate={true}
             />
           </div>

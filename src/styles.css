@@ -1,4 +1,4 @@
-.Container {
+.container-fluid {
   max-width: 800px;
   max-height: 620px;
   display: block;
@@ -8,7 +8,6 @@
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 40px;
-  box-shadow: 10px 10px 50px #f9e0c7;
 }
 
 .forecast-squares {
@@ -27,4 +26,22 @@
 
 .forecast-temp-min {
   color: #3a6874;
+}
+
+@media (max-width: 576px) {
+  .container-fluid {
+    max-width: 800px;
+    max-height: 400px;
+    display: block;
+    margin: 0 auto;
+    background-color: #f9e0c7;
+    padding: 30px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border-radius: 40px;
+  }
+
+  .form {
+    width: 220px;
+  }
 }
