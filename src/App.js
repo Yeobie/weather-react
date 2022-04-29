@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div className="WeatherApp">
       <div className="container-fluid">
-        <Content />
+        <Content defaultCity="Molfetta" />
       </div>
       <Credits />
     </div>
