@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Content.css";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import ReactAnimatedWeather from "react-animated-weather";
 
@@ -10,7 +11,7 @@ export default function Content(props) {
     setWeatherData({
       city: response.data.name,
       ready: true, //see line 7
-      date: "Tuesday 19:30",
+      date: new Date(response.data.dt * 1000), //because response.data.dt gives a number that by convention needs to be multiplied *1000 in order to give the current time
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -49,7 +50,10 @@ export default function Content(props) {
         </div>
         <br />
         <h1 id="city-name">{weatherData.city}</h1>
-        <strong id="current-date">{weatherData.date}</strong>
+        <span id="current-date">
+          {" "}
+          <FormattedDate date={weatherData.date} />{" "}
+        </span>
         <p className="Conditions">
           <div className="Description">
             <p className="weatherdata" id="weather-description">
