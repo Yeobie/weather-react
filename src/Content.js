@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Content.css";
-import FormattedDate from "./FormattedDate";
 import axios from "axios";
-import ReactAnimatedWeather from "react-animated-weather";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Content(props) {
   let [weatherData, setWeatherData] = useState({ ready: false }); //this is to avoid the API making the call continuously. This way, it will make the call only when ready is set to true, which is only in the function handleResponse
+  let [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
@@ -19,8 +19,59 @@ export default function Content(props) {
     });
   }
 
+  function search() {
+    const apiKey = "c85b27a23cdabeb4a98bf187361b3297";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function updateCity(event) {
+    setCity(event.target.value);
+  }
   //see line 12
   if (weatherData.ready) {
+    return (
+      <div>
+        <div className="row Content">
+          <div className="col-4 d-none d-md-block">
+            <h3>Weather in...</h3>
+          </div>
+          <div className="col-md-4 form">
+            <form id="search-form" onSubmit={handleSubmit}>
+              <input
+                type="search"
+                placeholder="Search city..."
+                className="form-control"
+                id="search-city-input"
+                autocomplete="off"
+                onChange={updateCity}
+              />
+            </form>
+          </div>
+          <div className="col search">
+            <button
+              type="button"
+              className="btn btn-primary"
+              id="search-button"
+              onClick={handleSubmit}
+            >
+              Search
+            </button>
+          </div>
+        </div>
+        <br />
+        <WeatherInfo data={weatherData} />
+      </div>
+    );
+  } else {
+    //if it's not ready, then it makes the API call that is below here
+    search();
+
     return (
       <div>
         <div className="row Content">
@@ -48,63 +99,7 @@ export default function Content(props) {
             </button>
           </div>
         </div>
-        <br />
-        <h1 id="city-name">{weatherData.city}</h1>
-        <span id="current-date">
-          {" "}
-          <FormattedDate date={weatherData.date} />{" "}
-        </span>
-        <p className="Conditions">
-          <div className="Description">
-            <p className="weatherdata" id="weather-description">
-              {weatherData.description}
-            </p>
-            <p className="weatherdata" id="wind">
-              Wind: {Math.round(weatherData.wind)}km/h
-            </p>
-            <p className="weatherdata" id="humidity">
-              Humidity: {weatherData.humidity}%
-            </p>
-          </div>
-        </p>
-        <div className="WeatherData">
-          {" "}
-          <div className="row">
-            <div className="col-1"></div>
-            <div className="col TemperatureValue" id="degrees-value">
-              {Math.round(weatherData.temperature)}
-            </div>
-            <div className="col Celsiusfahrenheit">
-              <button id="celsius-degrees" className="Active">
-                Cº{" "}
-              </button>
-              <button id="fahrenheit-degrees">Fº</button>
-            </div>{" "}
-            <div className="col Icon">
-              <ReactAnimatedWeather
-                icon="CLOUDY"
-                color="grey"
-                size={130}
-                animate={true}
-              />
-            </div>
-          </div>
-          <h4>
-            <strong></strong>
-          </h4>
-          <br />
-          <div id="forecast"></div>
-          <br />
-          <br />
-        </div>
       </div>
     );
-  } else {
-    //if it's not ready, then it makes the API call that is below here
-    const apiKey = "c85b27a23cdabeb4a98bf187361b3297";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-
-    return "Loading...";
   }
 }
