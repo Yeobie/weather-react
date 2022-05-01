@@ -101,3 +101,7 @@ h4 {
 .Active:hover {
   cursor: default;
 }
+
+.WeatherIcon {
+  margin-top: 15px;
+}

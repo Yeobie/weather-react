@@ -1,6 +1,6 @@
 import React from "react";
-import ReactAnimatedWeather from "react-animated-weather";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
   return (
@@ -37,12 +37,7 @@ export default function WeatherInfo(props) {
             <button id="fahrenheit-degrees">Fº</button>
           </div>{" "}
           <div className="col Icon">
-            <ReactAnimatedWeather
-              icon="CLOUDY"
-              color="grey"
-              size={130}
-              animate={true}
-            />
+            <WeatherIcon code={props.data.icon} />
           </div>
         </div>
         <h4>

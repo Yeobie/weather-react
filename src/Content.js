@@ -16,6 +16,7 @@ export default function Content(props) {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -72,34 +73,6 @@ export default function Content(props) {
     //if it's not ready, then it makes the API call that is below here
     search();
 
-    return (
-      <div>
-        <div className="row Content">
-          <div className="col-4 d-none d-md-block">
-            <h3>Weather in...</h3>
-          </div>
-          <div className="col-md-4 form">
-            <form id="search-form">
-              <input
-                type="search"
-                placeholder="Search city..."
-                className="form-control"
-                id="search-city-input"
-                autocomplete="off"
-              />
-            </form>
-          </div>
-          <div className="col search">
-            <button
-              type="button"
-              className="btn btn-primary"
-              id="search-button"
-            >
-              Search
-            </button>
-          </div>
-        </div>
-      </div>
-    );
+    return "Loading...";
   }
 }
