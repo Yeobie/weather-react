@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Content.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Content(props) {
   let [weatherData, setWeatherData] = useState({ ready: false }); //this is to avoid the API making the call continuously. This way, it will make the call only when ready is set to true, which is only in the function handleResponse
@@ -67,6 +68,7 @@ export default function Content(props) {
         </div>
         <br />
         <WeatherInfo data={weatherData} />
+        <WeatherForecast />
       </div>
     );
   } else {
