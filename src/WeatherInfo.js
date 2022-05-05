@@ -6,22 +6,16 @@ import CelsiusFahrenheit from "./CelsiusFahrenheit";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <h1 id="city-name">{props.data.city}</h1>
+      <h1>{props.data.city}</h1>
       <span id="current-date">
         {" "}
         <FormattedDate date={props.data.date} />{" "}
       </span>
       <p className="Conditions">
         <div className="Description">
-          <p className="weatherdata" id="weather-description">
-            {props.data.description}
-          </p>
-          <p className="weatherdata" id="wind">
-            Wind: {Math.round(props.data.wind)}km/h
-          </p>
-          <p className="weatherdata" id="humidity">
-            Humidity: {props.data.humidity}%
-          </p>
+          <p className="weatherdata">{props.data.description}</p>
+          <p className="weatherdata">Wind: {Math.round(props.data.wind)}km/h</p>
+          <p className="weatherdata">Humidity: {props.data.humidity}%</p>
         </div>
       </p>
       <div className="WeatherData">
@@ -33,13 +27,6 @@ export default function WeatherInfo(props) {
             <WeatherIcon code={props.data.icon} size={120} color="#4C8492" />
           </div>
         </div>
-        <h4>
-          <strong></strong>
-        </h4>
-        <br />
-        <div id="forecast"></div>
-        <br />
-        <br />
       </div>
     </div>
   );
