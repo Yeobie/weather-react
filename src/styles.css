@@ -30,7 +30,7 @@
 
 @media (max-width: 767px) {
   .container-fluid {
-    max-height: 400px;
+    max-height: 600px;
     margin-top: 60px;
   }
 

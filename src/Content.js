@@ -18,6 +18,7 @@ export default function Content(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
+      coordinates: response.data.coord,
     });
   }
 
@@ -44,13 +45,12 @@ export default function Content(props) {
             <h3>Weather in...</h3>
           </div>
           <div className="col-md-4 form">
-            <form id="search-form" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <input
                 type="search"
                 placeholder="Search city..."
                 className="form-control"
-                id="search-city-input"
-                autocomplete="off"
+                autoComplete="off"
                 onChange={updateCity}
               />
             </form>
@@ -59,7 +59,6 @@ export default function Content(props) {
             <button
               type="button"
               className="btn btn-primary"
-              id="search-button"
               onClick={handleSubmit}
             >
               Search
@@ -68,7 +67,7 @@ export default function Content(props) {
         </div>
         <br />
         <WeatherInfo data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
