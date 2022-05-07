@@ -8,7 +8,7 @@ export default function WeatherForecastDay(props) {
 
   return (
     <div className="WeatherForecastDay">
-      <div className="Forecast-Day-Week">{days[day]}</div>
+      <div className="Forecast-Day-Week mb-2">{days[day]}</div>
       <div className="WeatherIcon">
         <WeatherIcon
           code={props.data.weather[0].icon}
@@ -17,9 +17,10 @@ export default function WeatherForecastDay(props) {
         />
       </div>
       <div className="Forecast-Temperatures">
-        <span className="Forecast-Temp-Max me-3">
+        <span className="Forecast-Temp-Max me-2">
           {Math.round(props.data.temp.max)}º
         </span>
+
         <span className="Forecast-Temp-Min">
           {Math.round(props.data.temp.min)}º
         </span>

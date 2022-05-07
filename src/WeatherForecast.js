@@ -14,13 +14,21 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div>
-        <h4>
+        <h4 className="mb-3">
           <strong>Forecast</strong>
         </h4>{" "}
-        <div className="row d-flex justify-content-between WeatherForecast">
-          <div className="col-2 Forecast-Squares me-1">
-            <WeatherForecastDay data={forecast[0]} />
-          </div>
+        <div className="row WeatherForecast">
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col Forecast-Squares" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     );
