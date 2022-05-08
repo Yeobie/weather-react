@@ -11,13 +11,13 @@ export default function WeatherInfo(props) {
         {" "}
         <FormattedDate date={props.data.date} />{" "}
       </span>
-      <p className="Conditions">
+      <div className="Conditions">
         <div className="Description">
           <p className="weatherdata">{props.data.description}</p>
           <p className="weatherdata">Wind: {Math.round(props.data.wind)}km/h</p>
           <p className="weatherdata">Humidity: {props.data.humidity}%</p>
         </div>
-      </p>
+      </div>
       <div className="WeatherData">
         {" "}
         <div className="row">
